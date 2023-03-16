@@ -1,25 +1,36 @@
 <?php
 /**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
+ * The template for displaying all pages
+ * 
+ * @subpackage meditation-and-yoga
+ * @since 1.0
+ * @version 0.1
  */
 
-get_header();
+get_header(); ?>
 
-/* Start the Loop */
-while ( have_posts() ) :
-	the_post();
-	get_template_part( 'template-parts/content/content-page' );
+<?php do_action( 'meditation_and_yoga_above_header_page' ); ?>
 
-	// If comments are open or there is at least one comment, load up the comment template.
-	if ( comments_open() || get_comments_number() ) {
-		comments_template();
-	}
-endwhile; // End of the loop.
+<div class="container">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-get_footer();
+			<?php
+			while ( have_posts() ) : the_post();
+
+				get_template_part( 'template-parts/page/content', 'page' );
+
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+
+			endwhile; // End of the loop.
+			?>
+
+		</main>
+	</div>
+</div>
+
+<?php do_action( 'meditation_and_yoga_above_footer_page' ); ?>
+
+<?php get_footer();

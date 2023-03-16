@@ -1,17 +1,26 @@
 <?php
 /**
- * Displays the footer widget area.
+ * Displays footer widgets if assigned
  *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
+ * @subpackage meditation-and-yoga
+ * @since 1.0
+ * @version 1.4
  */
 
-if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-
-	<aside class="widget-area">
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	</aside><!-- .widget-area -->
-
-	<?php
-endif;
+?>
+<aside class="widget-area" role="complementary">
+	<div class="row">
+		<div class="widget-column footer-widget-1 col-lg-3 col-md-3">
+			<?php dynamic_sidebar( 'footer-1' ); ?>
+		</div>
+		<div class="widget-column footer-widget-2 col-lg-3 col-md-3">
+			<?php dynamic_sidebar( 'footer-2' ); ?>
+		</div>	
+		<div class="widget-column footer-widget-3 col-lg-3 col-md-3">
+			<?php dynamic_sidebar( 'footer-3' ); ?>
+		</div>
+		<div class="widget-column footer-widget-4 col-lg-3 col-md-3">
+			<?php dynamic_sidebar( 'footer-4' ); ?>
+		</div>
+	</div>
+</aside>
